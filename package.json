@@ -1,0 +1,32 @@
+{
+  "name": "airbnb-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "crypto-js": "^3.1.9-1",
+    "express": "^4.16.2",
+    "mongoose": "^5.0.5",
+    "mongoose-unique-validator": "^2.0.0",
+    "uid2": "^0.0.3",
+    "uniqid": "^4.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevinL5/airbnb-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kevinL5/airbnb-api/issues"
+  },
+  "homepage": "https://github.com/kevinL5/airbnb-api#readme"
+}
