@@ -1,6 +1,6 @@
 
 const mongoose = require('mongoose')
-var uniqueValidator = require('mongoose-unique-validator')
+const uniqueValidator = require('mongoose-unique-validator')
 const Schema = mongoose.Schema
 
 const regexEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -17,16 +17,24 @@ const userSchema = new Schema({
             type: String,
             required: [true, 'biography required']
         },
-     },
+    },
      email: {
         type: String,
         unique: true,
         uniqueCaseInsensitive: true,
         required: [true, 'email required']
-     },
+    },
+     emailVerified: {
+        type: Boolean,
+        default: false
+    },
      token: String,
      hash: String,
-     salt: String
+     salt: String,
+     rooms: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Room'
+    }]
 })
 
 userSchema.plugin(uniqueValidator, { message: '{PATH} should to be unique.' }
